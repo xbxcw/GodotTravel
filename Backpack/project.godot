@@ -8,12 +8,29 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Item_class.gd"
+} ]
 _global_script_class_icons={
-
+"Item": ""
 }
 
 [application]
 
 config/name="Backpack"
 config/icon="res://icon.png"
+
+[display]
+
+window/dpi/allow_hidpi=true
+
+[input]
+
+Inventory={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
+ ]
+}
