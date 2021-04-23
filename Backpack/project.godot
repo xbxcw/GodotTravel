@@ -10,17 +10,24 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://GDScript/Inventory.gd"
+}, {
+"base": "Resource",
 "class": "Item",
 "language": "GDScript",
-"path": "res://Item_class.gd"
+"path": "res://GDScript/Item_class.gd"
 } ]
 _global_script_class_icons={
+"Inventory": "",
 "Item": ""
 }
 
 [application]
 
 config/name="Backpack"
+run/main_scene="res://Scence/InventoryUI.tscn"
 config/icon="res://icon.png"
 
 [display]

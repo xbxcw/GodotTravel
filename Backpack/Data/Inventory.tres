@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://GDScript/Inventory.gd" type="Script" id=1]
+[ext_resource path="res://Data/Fish.tres" type="Resource" id=2]
+[ext_resource path="res://Data/Meet.tres" type="Resource" id=3]
+[ext_resource path="res://Data/Chicken.tres" type="Resource" id=4]
+
+[resource]
+script = ExtResource( 1 )
+items = [ ExtResource( 2 ), ExtResource( 4 ), null, null, ExtResource( 3 ), null, null, null, null ]
