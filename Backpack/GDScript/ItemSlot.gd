@@ -8,6 +8,8 @@ func update_item(item):
 	if item is Item:
 		var item_node = ItemNode.instance()
 		item_node.texture = item.texture
+		print(item)
+		item_node.item_date = item
 		add_child(item_node)
 	else:
 		for current_item in get_children():
@@ -22,8 +24,7 @@ func drop_data(_position, data):
 	var my_item_index = get_index()
 
 	var my_item = inventory.items[my_item_index]
-	print(data.item_index)
-	
+
 	if my_item is Item and my_item.name == data.item.name:
 		my_item.amount += data.item.amount
 
