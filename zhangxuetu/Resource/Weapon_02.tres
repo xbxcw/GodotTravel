@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://GDScript/GoodsProperty.gd" type="Script" id=1]
+[ext_resource path="res://Resource/roguelikeChar_transparent.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 749, 119.64, 5, 16.5781 )
+
+[resource]
+script = ExtResource( 1 )
+goodsName = "匕首"
+goodsTexture = SubResource( 1 )
+goodsDescription = "刺客用品"
+price = 5
+damage = 1
+moveSpeed = 0
+attackRange = 0

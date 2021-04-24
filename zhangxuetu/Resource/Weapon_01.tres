@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://GDScript/GoodsProperty.gd" type="Script" id=1]
+[ext_resource path="res://Resource/roguelikeChar_transparent.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 783, 103, 5, 13 )
+
+[resource]
+script = ExtResource( 1 )
+goodsName = "大剑"
+goodsTexture = SubResource( 1 )
+goodsDescription = "一把大剑"
+price = 10
+damage = 6
+moveSpeed = 0
+attackRange = 0
