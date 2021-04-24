@@ -7,6 +7,7 @@ func _input(event):
 	if event.is_action_pressed("Inventory"):
 		popup()
 func _ready():
+	inventory.make_items_unique()
 	inventory.connect("items_changed",self,"on_item_changed")
 	for item_index in inventory.items.size():
 		update_slot(item_index)
@@ -19,3 +20,9 @@ func update_slot(item_index):
 func on_item_changed(indexes):
 	for item_index in indexes:
 		update_slot(item_index)
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and not event.pressed:
+			if inventory.drag_data is Dictionary:
+				inventory.set_item(inventory.drag_data.item_index, inventory.drag_data.item)		

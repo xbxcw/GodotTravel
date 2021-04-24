@@ -3,7 +3,7 @@ extends Resource
 class_name Inventory
 
 export(Array, Resource) var items
-
+var drag_data
 
 signal items_changed(indexes)
 
@@ -27,3 +27,12 @@ func swap_items(item_index,target_item_index):
 	items[target_item_index] = item
 	items[item_index] = target_item
 	emit_signal("items_changed",[item_index,target_item_index])
+
+func make_items_unique():
+	var unique_items = []
+	for item in items:
+		if item is Item:
+			unique_items.append(item.duplicate())
+		else:
+			unique_items.append(null)
+	items = unique_items
