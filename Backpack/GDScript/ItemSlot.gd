@@ -8,8 +8,7 @@ func update_item(item):
 	if item is Item:
 		var item_node = ItemNode.instance()
 		item_node.texture = item.texture
-		print(item)
-		item_node.item_date = item
+		item_node.item_data = item
 		add_child(item_node)
 	else:
 		for current_item in get_children():
