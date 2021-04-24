@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Resource/Weapon_02.tres" type="Resource" id=1]
+[ext_resource path="res://Resource/Weapon_01.tres" type="Resource" id=2]
 [ext_resource path="res://Scenes/Goods.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Resource/Weapon_01.tres" type="Resource" id=4]
 
 [node name="PanelContainer" type="PanelContainer"]
 margin_right = 14.0
@@ -23,7 +23,7 @@ margin_bottom = 40.0
 columns = 5
 
 [node name="Goods" parent="MarginContainer/GridContainer" instance=ExtResource( 3 )]
-goodsProperty = ExtResource( 4 )
+goodsProperty = ExtResource( 2 )
 
 [node name="Goods2" parent="MarginContainer/GridContainer" instance=ExtResource( 3 )]
 margin_left = 44.0

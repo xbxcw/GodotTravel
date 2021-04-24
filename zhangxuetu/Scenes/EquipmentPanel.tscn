@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GDScript/EquipmentPanel.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Goods.tscn" type="PackedScene" id=2]
+
+[node name="EquipmentPanel" type="Panel"]
+margin_right = 285.0
+margin_bottom = 435.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goods" parent="." instance=ExtResource( 2 )]
+margin_left = 200.386
+margin_top = 328.711
+margin_right = 264.386
+margin_bottom = 392.711
+
+[node name="Goods7" parent="." instance=ExtResource( 2 )]
+margin_left = 114.335
+margin_top = 228.856
+margin_right = 178.335
+margin_bottom = 292.856
+
+[node name="Goods2" parent="." instance=ExtResource( 2 )]
+margin_left = 29.0201
+margin_top = 319.952
+margin_right = 93.0201
+margin_bottom = 383.952
+
+[node name="Goods3" parent="." instance=ExtResource( 2 )]
+margin_left = 110.18
+margin_top = 118.56
+margin_right = 174.18
+margin_bottom = 182.56
+
+[node name="Goods4" parent="." instance=ExtResource( 2 )]
+margin_left = 208.624
+margin_top = 90.0509
+margin_right = 272.624
+margin_bottom = 154.051
+
+[node name="Goods5" parent="." instance=ExtResource( 2 )]
+margin_left = 16.2612
+margin_top = 89.9259
+margin_right = 80.2612
+margin_bottom = 153.926
+
+[node name="Goods6" parent="." instance=ExtResource( 2 )]
+margin_left = 106.291
+margin_top = 2.7818
+margin_right = 170.291
+margin_bottom = 66.7818

@@ -9,6 +9,8 @@ export (Resource) var goodsProperty setget set_goodsProperty
 
 onready var textureRect = $TextureRect 
 
+export (Texture) var background setget set_background
+onready var backgroundRect = $Background
 
 #-------------------------
 # setget
@@ -47,6 +49,7 @@ func get_drag_data(_position):
 	dragNode.use_top_left = true #使图片剧中 看起来自然
 	dragNode.dragSource = self # 复制用于拖拽的节点记录当前拖拽的源节点
 	set_drag_preview(dragNode) # 设置鼠标拖拽的节点
+	dragNode.backgroundRect.visible = false
 	return dragNode
 
 func can_drop_data(_position, data):
@@ -61,7 +64,29 @@ func drop_data(_position, data):
 #-----------------------------
 # 自定义方法
 #----------------------------
+
+signal swaped_property(oldProperty,newProperty) # 交换属性
+signal unload(property) #卸下物品
 func swapGoods(a,b):
+
+	#交换物品信号
+	emit_signal('swaped_property', a.goodsProperty, b.goodsProperty)
+	emit_signal('swaped_property', b.goodsProperty, a.goodsProperty)
+
+	# 卸下物品信号
+	if a == null:
+		emit_signal('unload', b.goodsProperty)
+	if b == null:
+		emit_signal('unload', a.goodsProperty)
+
 	var p_temp = a.goodsProperty
 	a.goodsProperty = b.goodsProperty
 	b.goodsProperty = p_temp
+
+
+
+func set_background(value):
+	background = value
+	if backgroundRect == null:
+		yield(self, 'ready')
+	backgroundRect.texture = value
