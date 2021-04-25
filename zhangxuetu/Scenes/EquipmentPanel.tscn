@@ -12,10 +12,10 @@ __meta__ = {
 }
 
 [node name="Goods" parent="." instance=ExtResource( 2 )]
-margin_left = 200.386
-margin_top = 328.711
-margin_right = 264.386
-margin_bottom = 392.711
+margin_left = 199.914
+margin_top = 316.441
+margin_right = 263.914
+margin_bottom = 380.441
 
 [node name="Goods7" parent="." instance=ExtResource( 2 )]
 margin_left = 114.335

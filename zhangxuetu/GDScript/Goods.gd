@@ -70,14 +70,14 @@ signal unload(property) #卸下物品
 func swapGoods(a,b):
 
 	#交换物品信号
-	emit_signal('swaped_property', a.goodsProperty, b.goodsProperty)
-	emit_signal('swaped_property', b.goodsProperty, a.goodsProperty)
+	a.emit_signal('swaped_property', a.goodsProperty, b.goodsProperty)
+	b.emit_signal('swaped_property', b.goodsProperty, a.goodsProperty)
 
 	# 卸下物品信号
 	if a == null:
-		emit_signal('unload', b.goodsProperty)
+		b.emit_signal('unload', b.goodsProperty)
 	if b == null:
-		emit_signal('unload', a.goodsProperty)
+		a.emit_signal('unload', a.goodsProperty)
 
 	var p_temp = a.goodsProperty
 	a.goodsProperty = b.goodsProperty

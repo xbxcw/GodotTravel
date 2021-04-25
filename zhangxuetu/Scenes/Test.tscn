@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GDScript/Test.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Inventory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EquipmentPanel.tscn" type="PackedScene" id=3]
+
+[node name="Test" type="PanelContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 183.0
+margin_bottom = 175.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 172.0
+margin_bottom = 168.0
+
+[node name="Inventory" parent="HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 172.0
+margin_bottom = 64.0
+
+[node name="PropertyLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 172.0
+margin_bottom = 168.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="EquipmentPanel" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 176.0
+margin_right = 176.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+[connection signal="property_changed" from="HBoxContainer/EquipmentPanel" to="." method="_on_EquipmentPanel_property_changed"]

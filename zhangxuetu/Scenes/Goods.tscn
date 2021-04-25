@@ -1,29 +1,26 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GDScript/Goods.gd" type="Script" id=1]
-[ext_resource path="res://Resource/roguelikeChar_transparent.png" type="Texture" id=2]
-[ext_resource path="res://Resource/Weapon_03.tres" type="Resource" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 478, 0, 14, 8 )
-
 [node name="Goods" type="CenterContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 64.0
+margin_bottom = 64.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-goodsProperty = ExtResource( 3 )
 
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
 show_behind_parent = true
-margin_right = 64.0
-margin_bottom = 64.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 57.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 50, 50 )
 texture = ExtResource( 4 )
+expand = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 12.0
@@ -31,5 +28,4 @@ margin_top = 12.0
 margin_right = 52.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 40, 40 )
-texture = SubResource( 1 )
 stretch_mode = 6
