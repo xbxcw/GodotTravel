@@ -11,6 +11,7 @@ var roll_vector = Vector2.DOWN # 翻滚方向
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
+onready var swordHitbox = $HitboxPivot/SwordHitbox
 onready var animationState = animationTree.get("parameters/playback")
 
 
@@ -25,7 +26,7 @@ var state = MOVE
 
 func _ready():
 	animationTree.active = true
-
+	swordHitbox.knockback_vector = roll_vector
 func _physics_process(delta):
 	match state:
 		MOVE:
@@ -37,6 +38,7 @@ func _physics_process(delta):
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO # 输入速度
+	swordHitbox.knockback_vector = input_vector
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 

@@ -5,6 +5,9 @@
 [ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=3]
 
 [node name="world" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -15,4 +18,7 @@ position = Vector2( 21.125, 16.25 )
 position = Vector2( 51.25, 25.25 )
 
 [node name="Bat" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 92.9716, 44.5981 )
+position = Vector2( 93.1119, 44.4578 )
+
+[node name="Bat2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 72.4102, 53.686 )
