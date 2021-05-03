@@ -52,12 +52,12 @@ func move_state(delta):
 		animationState.travel('Idle')
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTIION * delta)
 	
-		if Input.is_action_just_pressed("Attack"):
-			state = ATTACK
-			
-			
-		if Input.is_action_just_pressed("Roll"):
-			state = ROLL
+	if Input.is_action_just_pressed("Attack"):
+		state = ATTACK
+		
+		
+	if Input.is_action_just_pressed("Roll"):
+		state = ROLL
 	move()
 	
 func move():
