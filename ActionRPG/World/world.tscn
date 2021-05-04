@@ -1,24 +1,38 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/HealthUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/DirtCliffTileMap.tres" type="TileSet" id=5]
+[ext_resource path="res://World/DirtPathTileMap.tres" type="TileSet" id=6]
 
 [node name="world" type="Node2D"]
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1060, 630 )
+
+[node name="DirtPathTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -65527, 0, 0, -65526, 0, 2, 9, 0, 65536, 10, 0, 65538, 65545, 0, 65536, 65546, 0, 65538, 131081, 0, 65536, 131082, 0, 65538, 196611, 0, 4, 196612, 0, 196609, 196613, 0, 196609, 196614, 0, 196609, 196615, 0, 196609, 196616, 0, 196609, 196617, 0, 262150, 196618, 0, 65538, 262147, 0, 65539, 262153, 0, 65536, 262154, 0, 65538, 327683, 0, 65539, 327689, 0, 65536, 327690, 0, 131077, 327691, 0, 1, 327692, 0, 1, 327693, 0, 1, 327694, 0, 1, 327695, 0, 1, 327696, 0, 1, 327697, 0, 1, 327698, 0, 1, 327699, 0, 1, 327700, 0, 1, 327701, 0, 1, 327702, 0, 2, 393219, 0, 65539, 393225, 0, 131072, 393226, 0, 131073, 393227, 0, 131073, 393228, 0, 131073, 393229, 0, 131073, 393230, 0, 131073, 393231, 0, 131073, 393232, 0, 131073, 393233, 0, 131073, 393234, 0, 131073, 393235, 0, 131073, 393236, 0, 131073, 393237, 0, 131073, 393238, 0, 131074, 458755, 0, 65539, 524291, 0, 65539, 655359, 0, 196608, 589824, 0, 196609, 589825, 0, 196609, 589826, 0, 196609, 589827, 0, 196615 )
+
+[node name="DirtCliffTileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65535, 0, 196608, 0, 0, 8, 1, 0, 196609, 2, 0, 196609, 3, 0, 196610, 6, 0, 196608, 7, 0, 6, 8, 0, 1, 9, 0, 2, 65536, 0, 65539, 65543, 0, 131072, 65544, 0, 131073, 65545, 0, 131074, 131072, 0, 65539, 131074, 0, 3, 196608, 0, 131075, 196610, 0, 65539, 262146, 0, 262148, 262147, 0, 196609, 262148, 0, 196609, 262149, 0, 8, 262150, 0, 196609, 262151, 0, 196609, 262152, 0, 196609, 262153, 0, 196609, 262154, 0, 196610, 327682, 0, 65539, 327685, 0, 65539, 393217, 0, 196608, 393218, 0, 196616, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196615 )
+
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 21.125, 16.25 )
+position = Vector2( 149.23, 81.0518 )
 
-[node name="Bush" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 51.25, 25.25 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Bat" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 93.1119, 44.4578 )
-
-[node name="Bat2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 72.4102, 53.686 )
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource( 4 )]
