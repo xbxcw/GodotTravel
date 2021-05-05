@@ -76,7 +76,6 @@ func move():
 func roll_state(_delta):
 	velocity = roll_vector * ROLL_SPEED
 	animationState.travel('Roll')
-	
 	move()
 # warning-ignore:unused_argument
 func attack_state(_delta):
